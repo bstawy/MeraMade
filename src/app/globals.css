@@ -1,49 +1,308 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Gold ramp */
+  --color-gold-300: #e9c176;
+  --color-gold-400: #c5a059;
+  --color-gold-500: #775a19;
+  --color-gold-600: #5e4612;
+
+  /* Sand / warm neutral ramp */
+  --color-sand-50: #fffbff;
+  --color-sand-100: #f9f3ea;
+  --color-sand-150: #f6f3f2;
+  --color-sand-200: #ede8df;
+  --color-sand-250: #e7e2d9;
+  --color-sand-300: #d1c5b4;
+  --color-sand-400: #ffdea5;
+  --color-sand-500: #f0d08e;
+
+  /* Dark neutral ramp */
+  --color-dark-50: #e5e2e1;
+  --color-dark-100: #d1c5b4;
+  --color-dark-200: #4e4639;
+  --color-dark-300: #2a2a2a;
+  --color-dark-400: #261900;
+  --color-dark-450: #412d00;
+  --color-dark-500: #1c1b1b;
+  --color-dark-600: #131313;
+  --color-dark-700: #0e0e0e;
+
+  /* Text */
+  --color-ink: #201b13;
+  --color-ink-muted: #4e4639;
+  --color-white: #ffffff;
+
+  /* Constant (same in both themes) */
+  --color-accent-constant: #c5a059;
+
+  /* --- Brand --- */
+  --color-primary: var(--color-gold-400);
+  --color-primary-hover: var(--color-gold-500);
+  --color-primary-subtle: var(--color-gold-600);
+
+  /* --- Backgrounds --- */
+  --color-bg-page: var(--color-sand-50);
+  --color-bg-surface: var(--color-sand-100);
+  --color-bg-surface-alt: var(--color-sand-150);
+  --color-bg-raised: var(--color-sand-200);
+  --color-bg-raised-alt: var(--color-sand-250);
+  --color-bg-highlight: var(--color-sand-400);
+
+  /* --- Borders --- */
+  --color-border: var(--color-sand-300);
+
+  /* --- Text --- */
+  --color-text-primary: var(--color-ink);
+  --color-text-primary-dim: color-mix(
+    in srgb,
+    var(--color-ink) 80%,
+    transparent
+  );
+  --color-text-secondary: var(--color-ink-muted);
+  --color-text-on-primary: var(--color-white);
+  --color-text-on-dark: var(--color-white);
+
+  /* --- Constant (ignores theme) --- */
+  --color-accent: var(--color-accent-constant);
+
+  --color-success: #4caf80;
+  --color-warning: #f0a040;
+  --color-error: #e07a52;
+
+  /* ─── Typography ─── */
+  --font-display: var(--font-epilogue), sans-serif;
+  --font-main: var(--font-manrope), sans-serif;
+  --font-arabic: var(--font-ibm-plex-sans-arabic), sans-serif;
+
+  /* ─── Font sizes ─── */
+  --fs-14: clamp(0.75rem, 0.225vw + 0.695rem, 0.875rem);
+  --fs-16: clamp(0.875rem, 0.225vw + 0.82rem, 1rem);
+  --fs-18: clamp(1rem, 0.225vw + 0.945rem, 1.125rem);
+  --fs-24: clamp(1.25rem, 0.449vw + 1.14rem, 1.5rem);
+  --fs-32: clamp(1.5rem, 0.449vw + 1.64rem, 2rem);
+  --fs-48: clamp(2.25rem, 1.348vw + 1.921rem, 3rem);
+  --fs-64: clamp(2rem, 3.596vw + 1.124rem, 4rem);
+  --fs-96: clamp(3rem, 5.393vw + 1.685rem, 6rem);
+
+  /* ─── Font Weights ─── */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+
+  /* Spacing */
+  --space-6: clamp(3px, 0.8vw + 1px, 6px);
+  --space-8: clamp(4px, 1vw + 2px, 8px);
+  --space-10: clamp(5px, 1.25vw + 2.5px, 10px);
+  --space-12: clamp(6px, 1.5vw + 3px, 12px);
+  --space-16: clamp(8px, 2vw + 4px, 16px);
+  --space-20: clamp(10px, 2.25vw + 5px, 20px);
+  --space-24: clamp(12px, 2.5vw + 6px, 24px);
+  --space-32: clamp(16px, 4vw + 8px, 32px);
+  --space-38: clamp(19px, 4.5vw + 9px, 38px);
+  --space-48: clamp(24px, 5vw + 12px, 48px);
+  --space-64: clamp(32px, 6vw + 16px, 64px);
+  --space-96: clamp(24px, 8.989vw - 11.07px, 96px);
+  --space-200: clamp(96px, 8vw + 32px, 200px);
+
+  --container-max: 1200px;
+
+  /* ─── Border Radius ─── */
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-24: 24px;
+  --radius-circular: 9999px;
+
+  /* ─── Z-index scale ─── */
+  --z-base: 0;
+  --z-navbar: 100;
+  --z-dropdown: 200;
+  --z-sticky: 300;
+  --z-fixed: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-toast: 700;
+  --z-tooltip: 800;
+  --z-max: 9999;
+
+  /* ─── Shadows ─── */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* ─── Transitions ─── */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+[data-theme="dark"] {
+  /* --- Brand --- */
+  --color-primary: var(--color-gold-300);
+  --color-primary-hover: color-mix(in srgb, var(--color-gold-300) 85%, white);
+  --color-primary-subtle: var(--color-sand-500);
+
+  /* --- Backgrounds --- */
+  --color-bg-page: var(--color-dark-600);
+  --color-bg-surface: var(--color-dark-500);
+  --color-bg-surface-alt: var(--color-dark-400);
+  --color-bg-raised: var(--color-dark-300);
+  --color-bg-raised-alt: var(--color-dark-300);
+  --color-bg-highlight: var(--color-gold-400);
+
+  /* --- Borders --- */
+  --color-border: color-mix(in srgb, var(--color-dark-200) 20%, transparent);
+
+  /* --- Text --- */
+  --color-text-primary: var(--color-dark-50);
+  --color-text-primary-dim: var(--color-dark-50);
+  --color-text-secondary: var(--color-dark-100);
+  --color-text-on-primary: var(--color-dark-450);
+  --color-text-on-dark: var(--color-dark-50);
+
+  /* --- Constant (unchanged) --- */
+  --color-accent: var(--color-accent-constant);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ─── Scroll behavior (respects user motion preference) ─── */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
+/* ─── Box model reset ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin; /* Width: auto | thin | none */
+  scrollbar-color: var(--color-primary) transparent; /* Thumb color | Track color */
+}
+
+/* ─── Root font size anchor ─── */
 html {
-  height: 100%;
+  font-size: 100%; /* Respects user browser settings; 1rem = 16px by default */
+  -webkit-text-size-adjust: 100%; /* Prevents iOS auto font scaling */
 }
 
-html,
+/* ─── Body ─── */
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-main);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition:
+    background-color var(--transition-slow),
+    color var(--transition-slow);
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* ─── Arabic locale ─── */
+/* Note: lang is set on <html>, so the selector targets html, not body */
+html[lang="ar"] body {
+  font-family: var(--font-arabic);
+  direction: rtl;
 }
 
+section {
+  padding: clamp(96px, calc(50.427px + 11.685vw), 200px)
+    clamp(48px, calc(26.966px + 5.393vw), 96px);
+}
+
+/* ─── Headings ─── */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semi-bold);
+  line-height: 1.2;
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3 {
+  font-family: var(--font-arabic);
+}
+
+/* ─── Media ─── */
+img,
+video,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* ─── Links ─── */
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* ─── Lists ─── */
+ul,
+ol {
+  list-style: none;
+}
+
+/* ─── Buttons ─── */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-weight: var(--fw-bold);
+  font-family: var(--font-display);
+  font-size: inherit; /* Added: prevents browser default sizing */
+  color: inherit; /* Added: inherits theme text color */
+  line-height: inherit;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-primary) 80%, black);
+}
+
+/* ─── Accessibility: focus ring ─── */
+:focus-visible {
+  outline: 0;
+  outline-offset: 3px;
+  border-radius: var(--radius-6);
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
   }
 }
