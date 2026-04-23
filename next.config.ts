@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["192.168.1.8"],
+
   // 1. Top-level key for Next.js 15+ (Development)
   turbopack: {
     rules: {
