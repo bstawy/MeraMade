@@ -26,25 +26,29 @@ const nextConfig: NextConfig = {
 
   // 2. Webpack configuration (Production)
   webpack(config) {
-    const rules = config.module.rules;
-
-    const fileLoaderRule = rules.find((rule) => rule.test?.test?.(".svg"));
+    // 1. Find the rule that currently handles SVGs
+    const fileLoaderRule = config.module.rules.find((rule: any) =>
+      rule?.test?.test?.(".svg"),
+    );
 
     if (fileLoaderRule) {
       config.module.rules.push(
+        // Handle *.svg?url
         {
           ...fileLoaderRule,
           test: /\.svg$/i,
-          resourceQuery: /url/,
+          resourceQuery: /url/, // *.svg?url
         },
+        // Handle everything else as React components
         {
           test: /\.svg$/i,
           issuer: fileLoaderRule.issuer,
-          resourceQuery: { not: [/url/] },
+          resourceQuery: { not: [/url/] }, // exclude *.svg?url
           use: ["@svgr/webpack"],
         },
       );
 
+      // 2. Tell the original rule to ignore SVGs
       fileLoaderRule.exclude = /\.svg$/i;
     }
 
