@@ -15,7 +15,6 @@ const NavLinks = ({
   isLinkHovered,
   setIsLinkHovered,
 }: NavLinksProps) => {
-  console.log("isMenuOpen:", isMenuOpen);
   return (
     <nav
       className={`${styles.navbar} ${isMenuOpen ? styles.mobileVisible : ""}`}
@@ -37,7 +36,7 @@ const NavLinks = ({
         />
         <NavLinkItem
           title="Events"
-          path="/e"
+          path="/events"
           isLinkHovered={isLinkHovered}
           setIsHovered={setIsLinkHovered}
           onTap={onTap}

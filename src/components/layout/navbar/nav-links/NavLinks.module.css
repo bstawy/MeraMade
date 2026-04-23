@@ -51,7 +51,6 @@
     z-index: var(--z-navbar);
     transform: translateY(-10px);
     transition:
-      /*visibility var(--transition-base),*/
       transform var(--transition-base),
       opacity var(--transition-base);
   }

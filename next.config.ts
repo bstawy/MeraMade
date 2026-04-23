@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 
-  // 1. Top-level key for Next.js 15+ (Development)
+  // 1. turbopack configuration (Development)
   turbopack: {
     rules: {
       "*.svg": {

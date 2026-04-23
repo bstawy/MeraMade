@@ -21,6 +21,7 @@
   position: relative;
   overflow: hidden;
 }
+
 /* The animated fill */
 .scrollIndicator__line::after {
   content: "";

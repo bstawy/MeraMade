@@ -19,7 +19,6 @@
 }
 
 .card {
-  /*padding: clamp(24px, calc(-0.762px + 3.81vw), 48px);*/
   padding: var(--space-48);
   border-radius: var(--radius-24);
   display: flex;

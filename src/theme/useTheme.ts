@@ -1,4 +1,4 @@
-"use client"; // 👈 Required for hooks
+"use client";
 
 import { useContext } from "react";
 import type { ThemeContextType } from "./themeTypes";
