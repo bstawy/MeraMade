@@ -1,0 +1,125 @@
+/* ─── Base ─── */
+.btn {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  border: 1px solid transparent;
+  border-radius: var(--radius-6);
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+
+  transition:
+    color var(--transition-base),
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+/* ─── Icon Handling ─── */
+.btn span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Ensure icons don't grow or shrink relative to text */
+.btn svg,
+.btn img {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+/* ─── Variants ─── */
+.primary {
+  color: var(--color-text-on-primary);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.primary:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-primary), white 15%);
+  border-color: color-mix(in srgb, var(--color-primary), white 15%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px
+    color-mix(in srgb, var(--color-primary), transparent 60%);
+}
+
+.ghost {
+  color: var(--color-primary);
+  background: transparent;
+  border-color: color-mix(in srgb, var(--color-primary), transparent 80%);
+}
+
+.ghost:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--color-primary), transparent 90%);
+  border-color: color-mix(in srgb, var(--color-primary), transparent 40%);
+  transform: translateY(-2px);
+}
+
+.text {
+  color: var(--color-primary);
+  background: transparent;
+  border-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.text:hover:not(:disabled) {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ─── Sizes ─── */
+.sm {
+  padding: 6px 12px;
+  font-size: var(--fs-14);
+}
+
+.md {
+  padding: 10px 20px;
+  font-size: var(--fs-16);
+}
+
+.lg {
+  padding: var(--space-16) var(--space-32);
+  font-size: var(--fs-18);
+}
+
+/* ─── States ─── */
+.btn:active:not(:disabled) {
+  transform: translateY(0px);
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+.btn:disabled,
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(0.5);
+}
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  flex-shrink: 0;
+  width: var(--space-16);
+  height: var(--space-16);
+}
+
+.label {
+  line-height: 1;
+  display: inline-block;
+}
