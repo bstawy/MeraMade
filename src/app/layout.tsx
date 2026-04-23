@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Epilogue, Manrope, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { ThemeProvider } from "@/theme";
+
+import Header from "@/components/layout/header/Header";
 
 import "./globals.css";
-import Header from "@/components/layout/header/Header";
 
 /* ------  Fonts  ------ */
 const epilogue = Epilogue({
@@ -41,8 +43,10 @@ export default function RootLayout({
       className={`${epilogue.variable} ${manrope.variable} ${ibmPlexSansArabic.variable}`}
     >
       <body>
-        <Header />
-        {children}
+        <ThemeProvider>
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

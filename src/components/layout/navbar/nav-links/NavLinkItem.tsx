@@ -21,10 +21,7 @@ const NavLinkItem = ({
   onTap,
 }: NavLinkItemProps) => {
   const pathname = usePathname();
-  console.log("pathname:", pathname);
   const isActive = pathname === path;
-  console.log("path:", path);
-  console.log("isActive:", isActive);
 
   return (
     <li

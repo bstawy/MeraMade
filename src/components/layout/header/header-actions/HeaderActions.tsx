@@ -4,7 +4,7 @@ import CartIcon from "@/assets/cart_icon.svg";
 import LangIcon from "@/assets/lang_icon.svg";
 import ThemeIcon from "@/assets/theme_icon.svg";
 
-// import { useTheme } from "../../../../theme/useTheme";
+import { useTheme } from "@/theme/useTheme";
 
 import HeaderActionButton from "./HeaderActionButton";
 
@@ -15,14 +15,14 @@ interface HeaderActionsProps {
 }
 
 const HeaderActions = ({ isMenuOpen }: HeaderActionsProps) => {
-  // const { _, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
 
   return (
     <div
       className={`${styles.actions} ${isMenuOpen ? styles.mobileVisible : ""}`}
     >
       <HeaderActionButton icon={<LangIcon />} />
-      <HeaderActionButton icon={<ThemeIcon />} onTap={() => {}} />
+      <HeaderActionButton icon={<ThemeIcon />} onTap={toggleTheme} />
       <HeaderActionButton icon={<CartIcon />} />
     </div>
   );
