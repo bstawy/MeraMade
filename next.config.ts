@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { RuleSetRule } from "webpack";
 
 const isProd = process.env.NODE_ENV === "production";
 const repoName = "/MeraMade";
@@ -27,9 +28,10 @@ const nextConfig: NextConfig = {
   // 2. Webpack configuration (Production)
   webpack(config) {
     // 1. Find the rule that currently handles SVGs
-    const fileLoaderRule = config.module.rules.find((rule: any) =>
-      rule?.test?.test?.(".svg"),
-    );
+    const fileLoaderRule = config.module.rules.find(
+      (rule: RuleSetRule) =>
+        rule?.test instanceof RegExp && rule.test.test(".svg"),
+    ) as RuleSetRule | undefined;
 
     if (fileLoaderRule) {
       config.module.rules.push(
