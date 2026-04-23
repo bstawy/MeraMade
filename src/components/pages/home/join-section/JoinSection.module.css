@@ -1,0 +1,34 @@
+.container {
+  padding: var(--space-96);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: var(--space-16);
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-24);
+}
+
+.title {
+  font-size: var(--fs-32);
+  font-weight: var(--fw-extra-bold);
+}
+
+.description {
+  width: 60%;
+  color: var(--color-text-secondary);
+  font-size: var(--fs-18);
+  font-weight: var(--fw-light);
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-20);
+}
+
+.terms {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-14);
+  font-weight: var(--fw-regular);
+}
