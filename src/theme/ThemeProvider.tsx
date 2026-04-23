@@ -8,7 +8,7 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-export function ThemeProvider({ children }: ThemeProviderProps) {
+export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setTheme] = useState<Theme>(THEMES.LIGHT);
   const [mounted, setMounted] = useState(false);
 
@@ -40,4 +40,4 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       </div>
     </ThemeContext.Provider>
   );
-}
+};
