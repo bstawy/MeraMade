@@ -28,7 +28,7 @@ const JoinForm = ({ onSubmit }: { onSubmit?: (email: string) => void }) => {
     if (isDirty) setError(validateEmail(value));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
     setIsDirty(true);
 
@@ -52,7 +52,6 @@ const JoinForm = ({ onSubmit }: { onSubmit?: (email: string) => void }) => {
         onChange={handleChange}
         onBlur={() => email && setIsDirty(true)}
         placeholder="Email Address"
-        hint={error || undefined}
       />
       <Button label="Subscribe" size="md" type="submit" />
     </form>
