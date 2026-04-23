@@ -1,7 +1,18 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+const repoName = "/MeraMade";
+
 const nextConfig: NextConfig = {
+  basePath: isProd ? repoName : "",
+  assetPrefix: isProd ? `${repoName}/` : "",
+
   allowedDevOrigins: ["192.168.1.8"],
+
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
 
   // 1. Top-level key for Next.js 15+ (Development)
   turbopack: {
@@ -15,20 +26,17 @@ const nextConfig: NextConfig = {
 
   // 2. Webpack configuration (Production)
   webpack(config) {
-    // We cast to 'any' to avoid deep Webpack type conflicts in Next.js
     const rules = config.module.rules;
 
     const fileLoaderRule = rules.find((rule) => rule.test?.test?.(".svg"));
 
     if (fileLoaderRule) {
       config.module.rules.push(
-        // Handle *.svg?url
         {
           ...fileLoaderRule,
           test: /\.svg$/i,
           resourceQuery: /url/,
         },
-        // Handle standard *.svg as React Component
         {
           test: /\.svg$/i,
           issuer: fileLoaderRule.issuer,
@@ -37,7 +45,6 @@ const nextConfig: NextConfig = {
         },
       );
 
-      // Tell original rule to ignore SVGs
       fileLoaderRule.exclude = /\.svg$/i;
     }
 
