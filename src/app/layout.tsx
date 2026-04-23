@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/theme";
 import Header from "@/components/layout/header/Header";
 
 import "./globals.css";
+import { SnackProvider } from "@/snackbar/SnackBarProvider";
+import { Snackbar } from "@/snackbar/SnackBar";
 
 /* ------  Fonts  ------ */
 const epilogue = Epilogue({
@@ -44,8 +46,11 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>
-          <Header />
-          {children}
+          <SnackProvider>
+            <Snackbar />
+            <Header />
+            {children}
+          </SnackProvider>
         </ThemeProvider>
       </body>
     </html>

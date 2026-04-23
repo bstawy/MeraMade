@@ -1,0 +1,116 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: fit-content;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.label {
+  font-size: var(--fs-14);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  border: 1px solid;
+  border-radius: var(--radius-6);
+  transition: all var(--transition-base);
+  background: white;
+}
+
+.input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* ─── Variants ─── */
+.outlined {
+  border-color: var(--color-primary-hover);
+}
+
+.outlined:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--color-primary), transparent 85%);
+}
+
+.filled {
+  background: var(--color-bg-surface);
+  border-color: transparent;
+}
+
+.filled:focus-within {
+  background: white;
+  border-color: var(--color-primary);
+}
+
+/* ─── Sizes ─── */
+.sm {
+  padding: 6px 12px;
+  font-size: var(--fs-14);
+}
+.md {
+  padding: 10px 16px;
+  font-size: var(--fs-16);
+}
+.lg {
+  padding: 14px 18px;
+  font-size: var(--fs-16);
+}
+
+/* ─── States ─── */
+.errorState {
+  border-color: var(--color-error);
+}
+
+.errorMessage {
+  font-size: var(--fs-14);
+  color: var(--color-error);
+}
+
+.disabled {
+  background: var(--color-bg-disabled);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.icon {
+  display: flex;
+  color: var(--color-text-secondary);
+  font-size: 1.2em;
+}
+
+.passwordToggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-base);
+  flex-shrink: 0;
+}
+
+.passwordToggle:hover {
+  color: var(--color-primary);
+}
+
+/* Ensure the input doesn't overlap the toggle */
+.input {
+  padding-right: var(--space-6);
+}

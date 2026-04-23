@@ -1,0 +1,114 @@
+.manifestoSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-96);
+}
+
+.card {
+  margin: var(--space-24) 0;
+  padding: var(--space-96);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-24);
+  position: relative;
+}
+
+.icon {
+  color: var(--color-primary);
+}
+
+.wheatCard {
+  padding: var(--space-32);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-page);
+  border-radius: var(--radius-12);
+  font-family: var(--font-display);
+  position: absolute;
+  left: var(--space-48);
+  bottom: var(--space-48);
+}
+
+.wheatCard__percent {
+  color: var(--color-primary);
+  font-size: var(--fs-32);
+  font-weight: var(--fw-bold);
+}
+
+.wheatCard__title {
+  color: var(--color-primary);
+  font-size: var(--fs-14);
+  font-weight: var(--fw-bold);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.title {
+  font-size: var(--fs-64);
+  font-weight: var(--fw-extra-bold);
+}
+
+.description {
+  color: var(--color-text-primary-dim);
+  font-size: var(--fs-18);
+  font-weight: var(--fw-light);
+}
+
+.journey {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.journeyTitle {
+  display: flex;
+  align-items: center;
+}
+
+.journeyTitle::before {
+  content: "";
+  width: var(--space-48);
+  height: 1px;
+  background: var(--color-primary);
+  margin-right: var(--space-24);
+}
+
+.journeyDescription {
+  display: flex;
+  align-items: stretch;
+  color: var(--color-text-secondary);
+}
+
+.journeyDescription::before {
+  content: "";
+  width: 2px;
+  background: var(--color-bg-surface);
+  margin-right: var(--space-24);
+  flex-shrink: 0;
+}
+
+@media (max-width: 620px) {
+  .content {
+    order: 0;
+  }
+
+  .card {
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-24);
+    position: static;
+  }
+
+  .wheatCard {
+    position: static;
+  }
+}
