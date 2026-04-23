@@ -1,0 +1,30 @@
+.mainText {
+  margin-bottom: 24px;
+  font-size: var(--fs-96);
+  font-weight: var(--fw-extra-bold);
+  letter-spacing: -0.2rem;
+  line-height: 1;
+}
+
+.mainText span:first-child {
+  color: var(--color-text-primary);
+}
+
+.mainText span:last-child {
+  color: var(--color-primary);
+}
+
+.description {
+  width: 50%;
+  margin-bottom: 48px;
+  color: var(--color-text-primary-dim);
+  font-size: var(--fs-24);
+  font-weight: var(--fw-regular);
+  line-height: 1.2;
+}
+
+@media (max-width: 800px) {
+  .description {
+    width: 100%;
+  }
+}

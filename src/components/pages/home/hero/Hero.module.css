@@ -1,0 +1,19 @@
+.hero {
+  min-height: 100vh;
+  background-image: radial-gradient(
+    ellipse 70% 60% at 65% 40%,
+    var(--color-primary) 0%,
+    transparent 60%
+  );
+}
+
+.heroContent {
+  position: relative;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    min-height: 0;
+    background-image: none;
+  }
+}
