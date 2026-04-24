@@ -1,9 +1,10 @@
-// import styles from "./page.module.css";
+import BakeryHero from "@/components/pages/bakery/hero/BakeryHero";
+import styles from "./page.module.css";
 
 const Bakery = () => {
   return (
     <main>
-      <h1>The Bakery</h1>
+      <BakeryHero />
     </main>
   );
 };

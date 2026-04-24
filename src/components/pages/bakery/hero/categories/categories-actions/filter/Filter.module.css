@@ -1,0 +1,13 @@
+.filters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.filters .title {
+  margin-right: var(--space-16);
+  color: var(--color-primary);
+  font-size: var(--fs-18);
+  font-weight: var(--fw-regular);
+}

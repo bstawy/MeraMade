@@ -1,0 +1,40 @@
+.dropdownMenu {
+  position: relative;
+  display: inline-block;
+}
+
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-bg-surface);
+  border: 1px solid;
+  border-color: color-mix(in srgb, var(--color-primary), transparent 80%);
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  width: 200px;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.options li {
+  padding: 12px 16px;
+  cursor: pointer;
+  color: var(--color-primary);
+  background: transparent;
+  border-color: color-mix(in srgb, var(--color-primary), transparent 80%);
+}
+
+.options li:hover {
+  background: color-mix(in srgb, var(--color-primary), transparent 90%);
+  border-color: color-mix(in srgb, var(--color-primary), transparent 40%);
+  transform: translateY(-2px);
+}
+
+.options li.active {
+  font-weight: bold;
+  background: color-mix(in srgb, var(--color-primary), transparent 90%);
+  border-color: color-mix(in srgb, var(--color-primary), transparent 40%);
+  transform: translateY(-2px);
+}
