@@ -1,0 +1,173 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": {
+        "en": "Bread",
+        "ar": "خبز"
+      }
+    },
+    {
+      "id": "2",
+      "name": {
+        "en": "Pastries",
+        "ar": "فطائر"
+      }
+    },
+    {
+      "id": "3",
+      "name": {
+        "en": "Desserts",
+        "ar": "حلويات"
+      }
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": { "en": "Baguette", "ar": "باجيت" },
+      "categoryId": "1",
+      "price": 15,
+      "createdAt": "2026-01-05",
+      "rating": 4.2
+    },
+    {
+      "id": "2",
+      "name": { "en": "Whole Wheat Bread", "ar": "خبز قمح كامل" },
+      "categoryId": "1",
+      "price": 18,
+      "createdAt": "2026-01-10",
+      "rating": 4.5
+    },
+    {
+      "id": "3",
+      "name": { "en": "Focaccia", "ar": "فوكاتشيا" },
+      "categoryId": "1",
+      "price": 22,
+      "createdAt": "2026-02-02",
+      "rating": 4.6
+    },
+    {
+      "id": "4",
+      "name": { "en": "Sourdough Bread", "ar": "خبز ساوردو" },
+      "categoryId": "1",
+      "price": 25,
+      "createdAt": "2026-02-15",
+      "rating": 4.8
+    },
+    {
+      "id": "5",
+      "name": { "en": "Milk Bread", "ar": "خبز الحليب" },
+      "categoryId": "1",
+      "price": 20,
+      "createdAt": "2026-03-01",
+      "rating": 4.3
+    },
+    {
+      "id": "6",
+      "name": { "en": "Rye Bread", "ar": "خبز الجاودار" },
+      "categoryId": "1",
+      "price": 19,
+      "createdAt": "2026-03-10",
+      "rating": 4.1
+    },
+
+    {
+      "id": "7",
+      "name": { "en": "Croissant", "ar": "كرواسون" },
+      "categoryId": "2",
+      "price": 25,
+      "createdAt": "2026-01-08",
+      "rating": 4.7
+    },
+    {
+      "id": "8",
+      "name": { "en": "Chocolate Croissant", "ar": "كرواسون بالشوكولاتة" },
+      "categoryId": "2",
+      "price": 30,
+      "createdAt": "2026-01-20",
+      "rating": 4.9
+    },
+    {
+      "id": "9",
+      "name": { "en": "Cheese Danish", "ar": "دانيش بالجبنة" },
+      "categoryId": "2",
+      "price": 28,
+      "createdAt": "2026-02-05",
+      "rating": 4.4
+    },
+    {
+      "id": "10",
+      "name": { "en": "Cinnamon Roll", "ar": "رول القرفة" },
+      "categoryId": "2",
+      "price": 35,
+      "createdAt": "2026-02-18",
+      "rating": 4.8
+    },
+    {
+      "id": "11",
+      "name": { "en": "Almond Croissant", "ar": "كرواسون باللوز" },
+      "categoryId": "2",
+      "price": 32,
+      "createdAt": "2026-03-03",
+      "rating": 4.6
+    },
+    {
+      "id": "12",
+      "name": { "en": "Spinach Pastry", "ar": "فطيرة سبانخ" },
+      "categoryId": "2",
+      "price": 24,
+      "createdAt": "2026-03-12",
+      "rating": 4.2
+    },
+
+    {
+      "id": "13",
+      "name": { "en": "Chocolate Cake", "ar": "كيك شوكولاتة" },
+      "categoryId": "3",
+      "price": 120,
+      "createdAt": "2026-01-12",
+      "rating": 4.9
+    },
+    {
+      "id": "14",
+      "name": { "en": "Vanilla Cake", "ar": "كيك فانيليا" },
+      "categoryId": "3",
+      "price": 110,
+      "createdAt": "2026-01-25",
+      "rating": 4.5
+    },
+    {
+      "id": "15",
+      "name": { "en": "Red Velvet Cake", "ar": "كيك ريد فيلفيت" },
+      "categoryId": "3",
+      "price": 140,
+      "createdAt": "2026-02-08",
+      "rating": 4.8
+    },
+    {
+      "id": "16",
+      "name": { "en": "Donut", "ar": "دونات" },
+      "categoryId": "3",
+      "price": 18,
+      "createdAt": "2026-02-20",
+      "rating": 4.3
+    },
+    {
+      "id": "17",
+      "name": { "en": "Éclair", "ar": "إكلير" },
+      "categoryId": "3",
+      "price": 32,
+      "createdAt": "2026-03-05",
+      "rating": 4.6
+    },
+    {
+      "id": "18",
+      "name": { "en": "Cupcake", "ar": "كب كيك" },
+      "categoryId": "3",
+      "price": 20,
+      "createdAt": "2026-03-15",
+      "rating": 4.4
+    }
+  ]
+}

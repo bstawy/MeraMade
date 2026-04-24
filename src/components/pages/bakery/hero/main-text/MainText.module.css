@@ -1,0 +1,34 @@
+.mainText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: var(--space-32);
+}
+
+.title h1 {
+  font-size: var(--fs-96);
+  font-weight: var(--fw-extra-bold);
+  line-height: 1;
+}
+
+.title span {
+  color: var(--color-accent);
+  font-size: var(--fs-24);
+  font-weight: var(--fw-regular);
+  letter-spacing: 0.2rem;
+}
+
+.subtitle {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-18);
+  font-weight: var(--fw-regular);
+  line-height: 1.5;
+  max-width: 60%;
+}
