@@ -11,3 +11,17 @@
   font-size: var(--fs-18);
   font-weight: var(--fw-regular);
 }
+
+.mobileFilters {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .filters {
+    display: none;
+  }
+
+  .mobileFilters {
+    display: block;
+  }
+}

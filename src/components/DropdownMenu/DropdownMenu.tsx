@@ -38,7 +38,7 @@ const DropdownMenu = ({
   value,
 }: DropdownMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [, setSelected] = useState<DropdownOption | undefined>(
+  const [selected, setSelected] = useState<DropdownOption | undefined>(
     value ?? undefined,
   );
 
@@ -61,12 +61,9 @@ const DropdownMenu = ({
   };
 
   return (
-    <div
-      ref={dropdownRef}
-      style={{ position: "relative", display: "inline-block" }}
-    >
+    <div ref={dropdownRef} className={styles.dropdownMenu}>
       <Button
-        label={label}
+        label={selected ? selected.name.en : label}
         variant={BUTTON_VARIANTS.TEXT}
         size={BUTTON_SIZES.MEDIUM}
         onClick={() => setIsOpen(!isOpen)}

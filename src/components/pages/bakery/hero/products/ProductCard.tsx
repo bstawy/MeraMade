@@ -7,12 +7,14 @@ import { Category } from "@/types/category";
 interface ProductCardProps {
   product: Product;
   category?: Category;
+  index?: number;
   locale?: "en" | "ar";
 }
 
 const ProductCard = ({
   product,
   category,
+  index,
   locale = "en",
 }: ProductCardProps) => {
   const name = locale === "ar" ? product.name.ar : product.name.en;
@@ -37,7 +39,7 @@ const ProductCard = ({
         <button className={styles.cartButton}>+</button>
 
         <span className={styles.index}>
-          {String(product.id).padStart(2, "0")}
+          {String(index ?? product.id).padStart(2, "0")}
         </span>
       </div>
     </div>

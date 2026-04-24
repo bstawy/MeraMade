@@ -70,7 +70,7 @@
   font-weight: var(--fw-light);
   border-radius: var(--radius-circular);
   border: 1px solid var(--color-text-primary);
-  z-index: 10;
+  z-index: 2;
 }
 
 .footer .cartButton:hover {
