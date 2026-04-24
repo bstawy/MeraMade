@@ -1,18 +1,44 @@
-// import { Product } from "@/types/product";
+"use client";
 import styles from "./Products.module.css";
 
-// const ProductCard = ({ product }: { product: Product }) => {
-const ProductCard = () => {
+import { Product } from "@/types/product";
+import { Category } from "@/types/category";
+
+interface ProductCardProps {
+  product: Product;
+  category?: Category;
+  locale?: "en" | "ar";
+}
+
+const ProductCard = ({
+  product,
+  category,
+  locale = "en",
+}: ProductCardProps) => {
+  const name = locale === "ar" ? product.name.ar : product.name.en;
+
+  const categoryName = category
+    ? locale === "ar"
+      ? category.name.ar
+      : category.name.en
+    : "";
+
   return (
     <div className={styles.card}>
       <div className={styles.heading}>
-        <p className={styles.category}>SOURDOUGH</p>
-        <h3 className={styles.name}>Sourdough Bread</h3>
+        <p className={styles.category}>{categoryName}</p>
+
+        <h3 className={styles.name}>{name}</h3>
       </div>
+
       <div className={styles.footer}>
-        <h4 className={styles.price}>EGP 5.99</h4>
+        <h4 className={styles.price}>EGP {product.price}</h4>
+
         <button className={styles.cartButton}>+</button>
-        <span className={styles.index}>01</span>
+
+        <span className={styles.index}>
+          {String(product.id).padStart(2, "0")}
+        </span>
       </div>
     </div>
   );

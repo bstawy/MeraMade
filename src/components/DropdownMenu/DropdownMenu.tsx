@@ -10,7 +10,7 @@ import Button from "../Button/Button";
 import styles from "./DropdownMenu.module.css";
 
 export interface DropdownOption {
-  id: string | number;
+  id: string;
   value: string;
   name: {
     en: string;

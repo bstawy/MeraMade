@@ -9,7 +9,7 @@ export const SORT_OPTIONS = {
 export type SortOptionValue = (typeof SORT_OPTIONS)[keyof typeof SORT_OPTIONS];
 
 export interface SortOption {
-  id: number;
+  id: string;
   value: string;
   name: {
     en: string;

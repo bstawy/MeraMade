@@ -2,7 +2,7 @@ import { SortOption } from "@/types/sortOption";
 
 const sortOptionsList: SortOption[] = [
   {
-    id: 1,
+    id: "1",
     value: "newest",
     name: {
       en: "Newest",
@@ -10,7 +10,7 @@ const sortOptionsList: SortOption[] = [
     },
   },
   {
-    id: 2,
+    id: "2",
     value: "priceLowToHigh",
     name: {
       en: "Price: Low to High",
@@ -18,7 +18,7 @@ const sortOptionsList: SortOption[] = [
     },
   },
   {
-    id: 3,
+    id: "3",
     value: "priceHighToLow",
     name: {
       en: "Price: High to Low",
@@ -26,7 +26,7 @@ const sortOptionsList: SortOption[] = [
     },
   },
   {
-    id: 4,
+    id: "4",
     value: "rating",
     name: {
       en: "Rating",

@@ -8,14 +8,14 @@ import { categories } from "@/data/categories";
 import styles from "./Filter.module.css";
 
 interface FilterProps {
-  defultValue?: number;
-  onSelect?: (selectedCategoryId: number) => void;
+  defultValue?: string;
+  onSelect?: (selectedCategoryId: string) => void;
 }
 
 const Filter = ({ defultValue, onSelect }: FilterProps) => {
-  const [activeFilter, setActiveFilter] = useState<number>(defultValue || 0);
+  const [activeFilter, setActiveFilter] = useState<string>(defultValue || "0");
 
-  const userClickHandler = (id: number) => {
+  const userClickHandler = (id: string) => {
     setActiveFilter(id);
     onSelect?.(id);
   };
@@ -26,8 +26,8 @@ const Filter = ({ defultValue, onSelect }: FilterProps) => {
       <FilterItem
         key={0}
         name={{ en: "All", ar: "الكل" }}
-        isActive={activeFilter === 0}
-        onClick={() => userClickHandler(0)}
+        isActive={activeFilter === "0"}
+        onClick={() => userClickHandler("0")}
       />
       {categories.map((item) => (
         <FilterItem
