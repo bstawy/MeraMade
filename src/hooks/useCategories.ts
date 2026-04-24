@@ -8,7 +8,10 @@ export function useCategories() {
   const [categories, setCategories] = useState<Category[]>([]);
 
   useEffect(() => {
-    categoryService.getAll().then(setCategories);
+    // TODO: fetch categories from backend
+    // categoryService.getAll().then(setCategories);
+    const categories: Category[] = categoryService.getAll();
+    setCategories(categories);
   }, []);
 
   const categoryMap = Object.fromEntries(categories.map((c) => [c.id, c]));

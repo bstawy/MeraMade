@@ -1,21 +1,21 @@
 import { Category } from "@/types/category";
 export const categories: Category[] = [
   {
-    id: 1,
+    id: "1",
     name: {
       en: "Bread",
       ar: "خبز",
     },
   },
   {
-    id: 2,
+    id: "2",
     name: {
       en: "Pastries",
-      ar: "معجنات",
+      ar: "فطائر",
     },
   },
   {
-    id: 3,
+    id: "3",
     name: {
       en: "Desserts",
       ar: "حلويات",
