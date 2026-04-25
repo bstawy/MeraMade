@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import { useSnack } from "@/snackbar/useSnack";
 import Input from "@/components/Input/Input";
 import Button from "@/components/Button/Button";
+
+import type { INPUT_SIZES } from "@/components/Input/inputTypes";
+
 import styles from "./JoinSection.module.css";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -51,6 +54,7 @@ const JoinForm = ({ onSubmit }: { onSubmit?: (email: string) => void }) => {
         onChange={handleChange}
         onBlur={() => email && setIsDirty(true)}
         placeholder="Email Address"
+        inputSize="md"
       />
       <Button label="Subscribe" size="md" type="submit" />
     </form>

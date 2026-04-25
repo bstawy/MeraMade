@@ -8,7 +8,7 @@
   border: 1px solid transparent;
   border-radius: var(--radius-6);
   font-family: inherit;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   line-height: 1.2;
   white-space: nowrap;
   user-select: none;
@@ -19,7 +19,9 @@
     background-color var(--transition-base),
     border-color var(--transition-base),
     transform var(--transition-base),
-    box-shadow var(--transition-base);
+    box-shadow var(--transition-base),
+    padding-left var(--transition-base),
+    padding-right var(--transition-base);
 }
 
 /* ─── Icon Handling ─── */
@@ -74,18 +76,19 @@
 
 .text:hover:not(:disabled) {
   color: var(--color-primary-hover);
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  border-color: var(--color-primary);
+  /*text-decoration: underline;*/
+  /*text-underline-offset: 4px;*/
 }
 
 /* ─── Sizes ─── */
 .sm {
-  padding: 6px 12px;
+  padding: var(--space-6) var(--space-12);
   font-size: var(--fs-14);
 }
 
 .md {
-  padding: 10px 20px;
+  padding: var(--space-10) var(--space-20);
   font-size: var(--fs-16);
 }
 

@@ -3,12 +3,12 @@ import MainText from "./main-text/MainText";
 import Actions from "./actions/Actions";
 import ScrollIndicator from "./scroll-indicator/ScrollIndicator";
 
-import styles from "./Hero.module.css";
+import styles from "./HomeHero.module.css";
 
-const Hero = () => {
+const HomeHero = () => {
   return (
     <section id="hero" className={styles.hero}>
-      <div className={styles.heroContent}>
+      <div className={`section-container {styles.heroContent}`}>
         <Eyebrow text="ARTISANAL EXCELLENCE" />
         <MainText />
         <Actions />
@@ -18,4 +18,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HomeHero;

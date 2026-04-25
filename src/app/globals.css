@@ -217,7 +217,7 @@ html[lang="ar"] body {
   direction: rtl;
 }
 
-section {
+.section-container {
   padding: clamp(96px, calc(50.427px + 11.685vw), 200px)
     clamp(48px, calc(26.966px + 5.393vw), 96px);
 }

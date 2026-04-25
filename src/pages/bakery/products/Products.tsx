@@ -13,17 +13,19 @@ interface ProductsProps {
 
 const Products = ({ products, categoryMap, locale = "en" }: ProductsProps) => {
   return (
-    <div className={styles.products}>
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          product={product}
-          category={categoryMap[product.categoryId]}
-          index={products.indexOf(product) + 1}
-          locale={locale}
-        />
-      ))}
-    </div>
+    <section>
+      <div className={styles.products}>
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            category={categoryMap[product.categoryId]}
+            index={products.indexOf(product) + 1}
+            locale={locale}
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 export default Products;

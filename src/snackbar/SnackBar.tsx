@@ -1,6 +1,7 @@
 "use client";
 
 import { useSnack } from "@/snackbar/useSnack";
+
 import styles from "./SnackBar.module.css";
 
 const ICONS = {

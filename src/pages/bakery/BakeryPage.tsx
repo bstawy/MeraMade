@@ -1,14 +1,16 @@
 "use client";
 
 import { useCategories } from "@/hooks/useCategories";
-import styles from "./BakeryHero.module.css";
-import Categories from "./categories/Categories";
-import MainText from "./main-text/MainText";
-import Products from "./products/Products";
 import { useProducts } from "@/hooks/useProduct";
 import { SortOption } from "@/types/sortOption";
 
-const BakeryHero = () => {
+import Heading from "./heading/Heading";
+import Products from "./products/Products";
+import Actions from "@/pages/bakery/actions/Actions";
+
+import styles from "./BakeryPage.module.css";
+
+const BakeryPage = () => {
   const { products, setCategoryId, setSortBy } = useProducts();
   const { categoryMap } = useCategories();
 
@@ -21,17 +23,15 @@ const BakeryHero = () => {
   };
 
   return (
-    <section className={styles.container}>
-      <MainText />
-
-      <Categories
+    <div className={styles.container}>
+      <Heading />
+      <Actions
         onFilterChange={handleFilterChange}
         onSortChange={handleSortChange}
       />
-
       <Products products={products} categoryMap={categoryMap} />
-    </section>
+    </div>
   );
 };
 
-export default BakeryHero;
+export default BakeryPage;

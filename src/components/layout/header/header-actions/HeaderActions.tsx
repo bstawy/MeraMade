@@ -1,8 +1,8 @@
 "use client";
 
-import CartIcon from "@/assets/cart_icon.svg";
-import LangIcon from "@/assets/lang_icon.svg";
-import ThemeIcon from "@/assets/theme_icon.svg";
+import CartIcon from "@/assets/icons/cart_icon.svg";
+import LangIcon from "@/assets/icons/lang_icon.svg";
+import ThemeIcon from "@/assets/icons/theme_icon.svg";
 
 import { useTheme } from "@/theme/useTheme";
 

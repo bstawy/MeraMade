@@ -1,6 +1,6 @@
-import PasteriesIcon from "@/assets/pasteries_icon.svg";
-import BreadIcon from "@/assets/bread_icon.svg";
-import StarIcon from "@/assets/star_icon.svg";
+import PasteriesIcon from "@/assets/icons/pasteries_icon.svg";
+import BreadIcon from "@/assets/icons/bread_icon.svg";
+import StarIcon from "@/assets/icons/star_icon.svg";
 
 import CollectionCard from "./CollectionCard";
 
