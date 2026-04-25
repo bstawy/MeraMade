@@ -1,4 +1,4 @@
-import BakeryPage from "@/pages/bakery/BakeryPage";
+import BakeryPage from "@/components/pages/bakery/BakeryPage";
 
 const Bakery = () => {
   return (
