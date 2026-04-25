@@ -1,6 +1,6 @@
-import ProductCard from "./ProductCard";
-
 import styles from "./Products.module.css";
+
+import ProductCard from "./ProductCard";
 
 import { Product } from "@/types/product";
 import { Category } from "@/types/category";
