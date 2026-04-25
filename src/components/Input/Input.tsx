@@ -1,5 +1,5 @@
 import { forwardRef, useId, useState } from "react";
-// import { Eye, EyeOff } from "lucide-react"; // Or use your own SVG icons
+import { Eye, EyeOff } from "lucide-react"; // Or use your own SVG icons
 import { INPUT_VARIANTS, INPUT_SIZES } from "./inputTypes";
 import type { InputProps } from "./inputTypes";
 
@@ -77,7 +77,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
               tabIndex={-1} // Prevent tabbing into the icon
               aria-label={isPasswordVisible ? "Hide password" : "Show password"}
             >
-              {/*{isPasswordVisible ? <EyeOff size={20} /> : <Eye size={20} />}*/}
+              {isPasswordVisible ? <EyeOff size={20} /> : <Eye size={20} />}
             </button>
           )}
 
@@ -93,4 +93,5 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 );
 
 Input.displayName = "Input";
+
 export default Input;
