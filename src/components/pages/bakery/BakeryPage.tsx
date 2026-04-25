@@ -6,7 +6,7 @@ import { SortOption } from "@/types/sortOption";
 
 import Heading from "./heading/Heading";
 import Products from "./products/Products";
-import Actions from "@/pages/bakery/actions/Actions";
+import Actions from "@/components/pages/bakery/actions/Actions";
 
 import styles from "./BakeryPage.module.css";
 
