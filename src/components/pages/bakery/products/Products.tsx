@@ -18,13 +18,20 @@ const Products = ({ products, categoryMap, locale = "en" }: ProductsProps) => {
       <Reveal>
         <div className={styles.products}>
           {products.map((product) => (
-            <ProductCard
+            <Reveal
               key={product.id}
-              product={product}
-              category={categoryMap[product.categoryId]}
-              index={products.indexOf(product) + 1}
-              locale={locale}
-            />
+              as="div"
+              preset="slow"
+              delay={products.indexOf(product) * 100}
+            >
+              <ProductCard
+                key={product.id}
+                product={product}
+                category={categoryMap[product.categoryId]}
+                index={products.indexOf(product) + 1}
+                locale={locale}
+              />
+            </Reveal>
           ))}
         </div>
       </Reveal>
