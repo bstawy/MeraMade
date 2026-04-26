@@ -4,30 +4,40 @@ import { useEffect, useState } from "react";
 import { CartContext } from "./CartContext";
 import { CartItem } from "./cartTypes";
 import { Product } from "@/types/product";
-import { getCart, updateCart } from "./cart.service";
+
+const STORAGE_KEY = "cart";
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [items, setItems] = useState<CartItem[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false); // 🔥 important
 
-  // 🔄 Load from JSON Server
+  // ✅ Load from localStorage (once)
   useEffect(() => {
-    const loadCart = async () => {
-      const data = await getCart();
-      if (data?.items) setItems(data.items);
-    };
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
 
-    loadCart();
+      if (stored) {
+        setItems(JSON.parse(stored));
+      }
+    } catch (error) {
+      console.error("Failed to parse cart from localStorage", error);
+    } finally {
+      setIsLoaded(true);
+    }
   }, []);
 
-  // 🔥 Debounced sync
+  // ✅ Save to localStorage (after load only)
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      updateCart(items);
-    }, 400);
+    if (!isLoaded) return;
 
-    return () => clearTimeout(timeout);
-  }, [items]);
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    } catch (error) {
+      console.error("Failed to save cart", error);
+    }
+  }, [items, isLoaded]);
 
+  // 🛒 Add
   const addToCart = (product: Product) => {
     setItems((prev) => {
       const exists = prev.find((p) => p.id === product.id);
@@ -42,16 +52,21 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     });
   };
 
+  // ❌ Remove
   const removeFromCart = (id: string) => {
     setItems((prev) => prev.filter((p) => p.id !== id));
   };
 
+  // 🔄 Update qty
   const updateQuantity = (id: string, qty: number) => {
+    if (qty < 1) return; // 🔥 prevent invalid state
+
     setItems((prev) =>
       prev.map((p) => (p.id === id ? { ...p, quantity: qty } : p)),
     );
   };
 
+  // 🧹 Clear
   const clearCart = () => {
     setItems([]);
   };
