@@ -3,11 +3,12 @@ import { Epilogue, Manrope, IBM_Plex_Sans_Arabic } from "next/font/google";
 
 import { ThemeProvider } from "@/theme";
 import Header from "@/components/layout/header/Header";
+import Footer from "@/components/layout/footer/Footer";
+
 import { SnackProvider } from "@/snackbar/SnackBarProvider";
 import { Snackbar } from "@/snackbar/SnackBar";
 
 import "./globals.css";
-import Footer from "@/components/layout/footer/Footer";
 
 /* ------  Fonts  ------ */
 const epilogue = Epilogue({

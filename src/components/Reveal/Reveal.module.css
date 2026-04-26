@@ -1,0 +1,52 @@
+.reveal {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 0.7s;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+/* visible only controls opacity */
+.visible {
+  opacity: 1;
+}
+
+/* ─── Variants (initial state) ─── */
+
+.fadeUp {
+  transform: translateY(32px);
+}
+
+.fadeIn {
+  transform: none;
+}
+
+.slideLeft {
+  transform: translateX(40px);
+}
+
+.slideRight {
+  transform: translateX(-40px);
+}
+
+.zoomUp {
+  transform: translateY(20px) scale(0.95);
+}
+
+/* ─── Visible state per variant ─── */
+
+.visible.fadeUp {
+  transform: translateY(0);
+}
+
+.visible.slideLeft {
+  transform: translateX(0);
+}
+
+.visible.slideRight {
+  transform: translateX(0);
+}
+
+.visible.zoomUp {
+  transform: translateY(0) scale(1);
+}

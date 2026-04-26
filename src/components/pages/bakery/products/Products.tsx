@@ -4,6 +4,7 @@ import ProductCard from "./ProductCard";
 
 import { Product } from "@/types/product";
 import { Category } from "@/types/category";
+import Reveal from "@/components/Reveal/Reveal";
 
 interface ProductsProps {
   products: Product[];
@@ -14,17 +15,19 @@ interface ProductsProps {
 const Products = ({ products, categoryMap, locale = "en" }: ProductsProps) => {
   return (
     <section>
-      <div className={styles.products}>
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            category={categoryMap[product.categoryId]}
-            index={products.indexOf(product) + 1}
-            locale={locale}
-          />
-        ))}
-      </div>
+      <Reveal>
+        <div className={styles.products}>
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              category={categoryMap[product.categoryId]}
+              index={products.indexOf(product) + 1}
+              locale={locale}
+            />
+          ))}
+        </div>
+      </Reveal>
     </section>
   );
 };
