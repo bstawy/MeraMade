@@ -9,6 +9,10 @@ import Button from "../Button/Button";
 
 import styles from "./DropdownMenu.module.css";
 
+import { createPortal } from "react-dom";
+
+import { useFloatingDropdown } from "@/hooks/useFloatingDropdown";
+
 export interface DropdownOption {
   id: string;
   value: string;
@@ -42,6 +46,11 @@ const DropdownMenu = ({
     value ?? undefined,
   );
 
+  const { referenceRef, floatingRef } = useFloatingDropdown({
+    isOpen,
+    placement: "bottom-start",
+  });
+
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const closeMenu = () => setIsOpen(false);
@@ -61,7 +70,7 @@ const DropdownMenu = ({
   };
 
   return (
-    <div ref={dropdownRef} className={styles.dropdownMenu}>
+    <div ref={referenceRef} className={styles.dropdownMenu}>
       <Button
         label={selected ? selected.name.en : label}
         variant={BUTTON_VARIANTS.TEXT}
@@ -71,20 +80,22 @@ const DropdownMenu = ({
           <span className={`${styles.chevron} ${isOpen ? "open" : ""}`}>⌵</span>
         }
       />
-      {isOpen && (
-        <ul className={styles.options}>
-          {options.map((opt, index) => (
-            <li key={index}>
-              <div
-                onClick={() => handleSelection(opt)}
-                style={{ padding: "8px 12px", cursor: "pointer" }}
-              >
-                {opt.name.en || String(opt)}
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
+      {isOpen &&
+        createPortal(
+          <ul ref={floatingRef} className={styles.options}>
+            {options.map((opt, index) => (
+              <li key={index}>
+                <div
+                  onClick={() => handleSelection(opt)}
+                  style={{ padding: "8px 12px", cursor: "pointer" }}
+                >
+                  {opt.name.en || String(opt)}
+                </div>
+              </li>
+            ))}
+          </ul>,
+          document.body,
+        )}
     </div>
   );
 };

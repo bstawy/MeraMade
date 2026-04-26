@@ -13,12 +13,12 @@ interface ActionsProps {
 const Actions = ({ onFilterChange, onSortChange }: ActionsProps) => {
   return (
     <section>
-      <Reveal delay={0.2}>
-        <div className={styles.actions}>
-          <Filter onSelect={onFilterChange} />
-          <Sort onSortChange={onSortChange} />
-        </div>
-      </Reveal>
+      {/*<Reveal delay={0.2}>*/}
+      <div className={styles.actions}>
+        <Filter onSelect={onFilterChange} />
+        <Sort onSortChange={onSortChange} />
+      </div>
+      {/*</Reveal>*/}
     </section>
   );
 };
