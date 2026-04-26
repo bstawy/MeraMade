@@ -5,6 +5,19 @@
   gap: var(--space-32);
 }
 
+.emptyList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptyList p {
+  font-size: var(--fs-24);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-primary);
+}
+
 .product {
   padding: var(--space-32);
   display: flex;

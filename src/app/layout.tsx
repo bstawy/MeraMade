@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/theme";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
 
+import { CartProvider } from "@/features/cart";
 import { SnackProvider } from "@/snackbar/SnackBarProvider";
 import { Snackbar } from "@/snackbar/SnackBar";
 
@@ -77,12 +78,14 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>
-          <SnackProvider>
-            <Snackbar />
-            <Header />
-            {children}
-            <Footer />
-          </SnackProvider>
+          <CartProvider>
+            <SnackProvider>
+              <Snackbar />
+              <Header />
+              {children}
+              <Footer />
+            </SnackProvider>
+          </CartProvider>
         </ThemeProvider>
       </body>
     </html>
