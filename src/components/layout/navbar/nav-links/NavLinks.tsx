@@ -35,8 +35,8 @@ const NavLinks = ({
           onTap={onTap}
         />
         <NavLinkItem
-          title="Events"
-          path="/events"
+          title="Basket"
+          path="/basket"
           isLinkHovered={isLinkHovered}
           setIsHovered={setIsLinkHovered}
           onTap={onTap}

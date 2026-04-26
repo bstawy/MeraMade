@@ -1,0 +1,78 @@
+.productsList {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.product {
+  padding: var(--space-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-12);
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.title h3,
+.price {
+  font-size: var(--fs-24);
+  font-weight: var(--fw-regular);
+}
+
+.title h3 {
+  color: var(--color-primary);
+}
+
+.title p {
+  font-size: var(--fs-14);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-secondary);
+}
+
+.price {
+  color: var(--color-text-primary);
+}
+
+.quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counter {
+  padding: var(--space-8) var(--space-16);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-24);
+  background-color: var(--color-bg-page);
+  border-radius: var(--radius-6);
+}
+
+.counter button {
+  width: var(--space-24);
+  height: var(--space-24);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs-16);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-primary);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.counter button:hover {
+  background-color: var(--color-bg-surface);
+  border-radius: var(--radius-6);
+}
