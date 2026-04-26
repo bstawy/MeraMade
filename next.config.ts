@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   basePath: isProd ? repoName : "",
   assetPrefix: isProd ? `${repoName}/` : "",
 
-  allowedDevOrigins: ["192.168.1.9"],
+  allowedDevOrigins: ["192.168.1.7"],
 
   output: "export",
   images: {
