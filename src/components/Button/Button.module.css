@@ -25,18 +25,19 @@
 }
 
 /* ─── Icon Handling ─── */
-.btn span {
+/*.btn span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-}
+}*/
 
 /* Ensure icons don't grow or shrink relative to text */
 .btn svg,
 .btn img {
   width: 1.2em;
   height: 1.2em;
+  display: block;
 }
 
 /* ─── Variants ─── */
@@ -118,8 +119,6 @@
   justify-content: center;
   line-height: 0;
   flex-shrink: 0;
-  width: var(--space-16);
-  height: var(--space-16);
 }
 
 .label {

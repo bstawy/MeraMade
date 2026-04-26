@@ -3,6 +3,7 @@ import styles from "./Products.module.css";
 
 import { Product } from "@/types/product";
 import { Category } from "@/types/category";
+import { useCart } from "@/features/cart";
 
 interface ProductCardProps {
   product: Product;
@@ -17,6 +18,8 @@ const ProductCard = ({
   index,
   locale = "en",
 }: ProductCardProps) => {
+  const { addToCart } = useCart();
+
   const name = locale === "ar" ? product.name.ar : product.name.en;
 
   const categoryName = category
@@ -24,6 +27,10 @@ const ProductCard = ({
       ? category.name.ar
       : category.name.en
     : "";
+
+  const handleAddClick = () => {
+    addToCart(product);
+  };
 
   return (
     <div className={styles.card}>
@@ -36,7 +43,9 @@ const ProductCard = ({
       <div className={styles.footer}>
         <h4 className={styles.price}>EGP {product.price}</h4>
 
-        <button className={styles.cartButton}>+</button>
+        <button className={styles.cartButton} onClick={handleAddClick}>
+          +
+        </button>
 
         <span className={styles.index}>
           {String(index ?? product.id).padStart(2, "0")}

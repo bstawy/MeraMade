@@ -23,7 +23,7 @@ const HeaderActions = ({ isMenuOpen }: HeaderActionsProps) => {
     >
       <HeaderActionButton icon={<LangIcon />} />
       <HeaderActionButton icon={<ThemeIcon />} onTap={toggleTheme} />
-      <HeaderActionButton icon={<CartIcon />} />
+      {/*<HeaderActionButton icon={<CartIcon />} />*/}
     </div>
   );
 };
