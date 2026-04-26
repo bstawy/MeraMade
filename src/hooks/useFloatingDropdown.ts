@@ -14,12 +14,12 @@ type Options = {
   placement?: "bottom-start" | "bottom-end" | "top-start" | "top-end";
 };
 
-export function useFloatingDropdown({
+export function useFloatingDropdown<T extends HTMLElement>({
   isOpen,
   placement = "bottom-start",
 }: Options) {
-  const referenceRef = useRef<HTMLElement | null>(null);
-  const floatingRef = useRef<HTMLElement | null>(null);
+  const referenceRef = useRef<T | null>(null);
+  const floatingRef = useRef<T | null>(null);
 
   useEffect(() => {
     if (!isOpen) return;
