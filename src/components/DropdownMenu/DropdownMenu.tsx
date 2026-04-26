@@ -46,7 +46,7 @@ const DropdownMenu = ({
     value ?? undefined,
   );
 
-  const { referenceRef, floatingRef } = useFloatingDropdown({
+  const { referenceRef, floatingRef } = useFloatingDropdown<HTMLDivElement>({
     isOpen,
     placement: "bottom-start",
   });
@@ -82,18 +82,20 @@ const DropdownMenu = ({
       />
       {isOpen &&
         createPortal(
-          <ul ref={floatingRef} className={styles.options}>
-            {options.map((opt, index) => (
-              <li key={index}>
-                <div
-                  onClick={() => handleSelection(opt)}
-                  style={{ padding: "8px 12px", cursor: "pointer" }}
-                >
-                  {opt.name.en || String(opt)}
-                </div>
-              </li>
-            ))}
-          </ul>,
+          <div ref={floatingRef}>
+            <ul className={styles.options}>
+              {options.map((opt, index) => (
+                <li key={index}>
+                  <div
+                    onClick={() => handleSelection(opt)}
+                    style={{ padding: "8px 12px", cursor: "pointer" }}
+                  >
+                    {opt.name.en || String(opt)}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>,
           document.body,
         )}
     </div>
