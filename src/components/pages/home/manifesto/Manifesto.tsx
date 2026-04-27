@@ -1,11 +1,16 @@
+"use client";
+
 import WheatGrainIcon from "@/assets/icons/grain_wheat_icon.svg";
 
 import Eyebrow from "@/components/Eyebrow";
 
 import styles from "./Manifesto.module.css";
 import Reveal from "@/components/Reveal/Reveal";
+import { useLanguage } from "@/features/language/useLanguage";
 
 const Manifesto = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="manifesto">
       <Reveal>
@@ -16,27 +21,21 @@ const Manifesto = () => {
             </div>
             <div className={styles.wheatCard}>
               <span className={styles.wheatCard__percent}>100%</span>
-              <span className={styles.wheatCard__title}>ORGANIC FLOUR</span>
+              <span className={styles.wheatCard__title}>
+                {t("organicFlour")}
+              </span>
             </div>
           </div>
           <div className={styles.content}>
-            <Eyebrow text="OUR MANIFESTO" />
-            <h2 className={styles.title}>Crafted for the Nocturnal Artisan.</h2>
-            <p className={styles.description}>
-              We believe that the best things in life require time. In our
-              atelier, the world slows down. We don&apos;t chase efficiency; we
-              chase the perfect crust, the most aerated crumb, and the soul of
-              the grain.
-            </p>
+            <Eyebrow text={t("manifestoTitle")} />
+            <h2 className={styles.title}>{t("craftedFor")}</h2>
+            <p className={styles.description}>{t("manifestoText")}</p>
             <div className={styles.journey}>
               <div className={styles.journeyTitle}>
-                <Eyebrow text="THE NOCTURNAL JOURNEY" />
+                <Eyebrow text={t("journeyTitle")} />
               </div>
               <div className={styles.journeyDescription}>
-                <i>
-                  &quot;While the city sleeps, the ovens breathe. We are the
-                  keepers of the sourdough ritual.&quot;
-                </i>
+                <i>&quot;{t("journeyText")}&quot;</i>
               </div>
             </div>
           </div>

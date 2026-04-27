@@ -12,6 +12,7 @@ import styles from "./DropdownMenu.module.css";
 import { createPortal } from "react-dom";
 
 import { useFloatingDropdown } from "@/hooks/useFloatingDropdown";
+import { useLanguage } from "@/features/language/useLanguage";
 
 export interface DropdownOption {
   id: string;
@@ -41,6 +42,7 @@ const DropdownMenu = ({
   onSelect,
   value,
 }: DropdownMenuProps) => {
+  const { locale } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState<DropdownOption | undefined>(
     value ?? undefined,
@@ -72,7 +74,13 @@ const DropdownMenu = ({
   return (
     <div ref={referenceRef} className={styles.dropdownMenu}>
       <Button
-        label={selected ? selected.name.en : label}
+        label={
+          selected
+            ? locale === "en"
+              ? selected.name.en
+              : selected.name.ar
+            : label
+        }
         variant={BUTTON_VARIANTS.TEXT}
         size={BUTTON_SIZES.MEDIUM}
         onClick={() => setIsOpen(!isOpen)}
@@ -90,7 +98,8 @@ const DropdownMenu = ({
                     onClick={() => handleSelection(opt)}
                     style={{ padding: "8px 12px", cursor: "pointer" }}
                   >
-                    {opt.name.en || String(opt)}
+                    {(locale === "en" ? opt.name.en : opt.name.ar) ||
+                      String(opt)}
                   </div>
                 </li>
               ))}

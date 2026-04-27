@@ -5,6 +5,7 @@ import { SortOption } from "@/types/sortOption";
 import DropdownMenu, {
   type DropdownOption,
 } from "@/components/DropdownMenu/DropdownMenu";
+import { useLanguage } from "@/features/language/useLanguage";
 
 interface SortProps {
   /**
@@ -24,6 +25,8 @@ const Sort = ({ onSortChange }: SortProps) => {
     name: option.name,
   }));
 
+  const { t } = useLanguage();
+
   const handleSortChange = (option: DropdownOption) => {
     const selectedSortOption = sortOptionsList.find(
       (opt) => opt.value === option.value,
@@ -41,7 +44,7 @@ const Sort = ({ onSortChange }: SortProps) => {
   return (
     <div>
       <DropdownMenu
-        label="Sort By"
+        label={t("sort_by")}
         options={options}
         onSelect={handleSortChange}
       />

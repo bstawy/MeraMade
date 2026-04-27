@@ -6,7 +6,7 @@
 }
 
 .filters .title {
-  margin-right: var(--space-16);
+  margin-inline-end: var(--space-16);
   color: var(--color-primary);
   font-size: var(--fs-18);
   font-weight: var(--fw-regular);
