@@ -9,7 +9,6 @@ import Reveal from "@/components/Reveal/Reveal";
 interface ProductsProps {
   products: Product[];
   categoryMap: Record<string, Category>;
-  locale?: "en" | "ar";
 }
 
 const Products = ({ products, categoryMap, locale = "en" }: ProductsProps) => {
@@ -29,7 +28,6 @@ const Products = ({ products, categoryMap, locale = "en" }: ProductsProps) => {
                 product={product}
                 category={categoryMap[product.categoryId]}
                 index={products.indexOf(product) + 1}
-                locale={locale}
               />
             </Reveal>
           ))}
