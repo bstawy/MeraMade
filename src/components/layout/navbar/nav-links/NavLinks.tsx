@@ -1,3 +1,6 @@
+"use client";
+
+import { useLanguage } from "@/features/language/useLanguage";
 import NavLinkItem from "./NavLinkItem";
 
 import styles from "./NavLinks.module.css";
@@ -15,27 +18,29 @@ const NavLinks = ({
   isLinkHovered,
   setIsLinkHovered,
 }: NavLinksProps) => {
+  const { t } = useLanguage();
+
   return (
     <nav
       className={`${styles.navbar} ${isMenuOpen ? styles.mobileVisible : ""}`}
     >
       <ul className={styles.navList}>
         <NavLinkItem
-          title="Our Story"
+          title={t("ourStory")}
           path="/"
           isLinkHovered={isLinkHovered}
           setIsHovered={setIsLinkHovered}
           onTap={onTap}
         />
         <NavLinkItem
-          title="The Bakery"
+          title={t("bakery")}
           path="/bakery"
           isLinkHovered={isLinkHovered}
           setIsHovered={setIsLinkHovered}
           onTap={onTap}
         />
         <NavLinkItem
-          title="Basket"
+          title={t("basket")}
           path="/basket"
           isLinkHovered={isLinkHovered}
           setIsHovered={setIsLinkHovered}

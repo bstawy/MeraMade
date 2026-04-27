@@ -1,46 +1,49 @@
+"use client";
+
 import HeaderLogo from "@/components/layout/header/header-logo/HeaderLogo";
 
 import styles from "./Footer.module.css";
 import Reveal from "@/components/Reveal/Reveal";
+import { useLanguage } from "@/features/language/useLanguage";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <Reveal>
       <footer id="footer" className={styles.footer}>
         <div className={styles.logo}>
           <HeaderLogo />
-          <p className={styles.logo__description}>
-            Elevating the daily ritual of bread into an artisanal experience.
-          </p>
+          <p className={styles.logo__description}>{t("hero_tagline")}</p>
         </div>
         <div className={styles.guides}>
-          <h3 className={styles.title}>GUIDE</h3>
+          <h3 className={styles.title}>{t("nav_guide")}</h3>
           <a className={styles.guides__link} href="sourdoughGuide">
-            Sourdough Guide
+            {t("sourdough_guide")}
           </a>
           <a className={styles.guides__link} href="shipping">
-            Shipping
+            {t("nav_shipping")}
           </a>
           <a className={styles.guides__link} href="Contact">
-            Contact
+            {t("nav_contact")}
           </a>
           <a className={styles.guides__link} href="Wholesale">
-            Wholesale
+            {t("nav_wholesale")}
           </a>
         </div>
         <div className={styles.visit}>
-          <h3 className={styles.title}>VISIT</h3>
+          <h3 className={styles.title}>{t("nav_visit")}</h3>
           <a className={styles.guides__link} href="address">
-            Downtown Atelier
+            {t("location_name")}
             <br />
-            124 Artisan Row
+            {t("address_line")}
             <br />
-            Dubai, UAE
+            {t("city_country")}
           </a>
           <p className={styles.workingHours}>
-            Tue - Sun
+            {t("operating_days")}
             <br />
-            06:00 - 14:00
+            {t("operating_hours")}
           </p>
         </div>
       </footer>

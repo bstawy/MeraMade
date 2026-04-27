@@ -7,6 +7,7 @@ import { categories } from "@/data/categories";
 
 import styles from "./Filter.module.css";
 import DropdownMenu from "@/components/DropdownMenu/DropdownMenu";
+import { useLanguage } from "@/features/language/useLanguage";
 
 interface FilterProps {
   defultValue?: string;
@@ -14,6 +15,7 @@ interface FilterProps {
 }
 
 const Filter = ({ defultValue, onSelect }: FilterProps) => {
+  const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState<string>(defultValue || "0");
 
   const userClickHandler = (id: string) => {
@@ -24,7 +26,7 @@ const Filter = ({ defultValue, onSelect }: FilterProps) => {
   return (
     <>
       <div className={styles.filters}>
-        <span className={styles.title}>FILTER BY</span>
+        <span className={styles.title}>{t("filter_by")}</span>
         <FilterItem
           key={0}
           name={{ en: "All", ar: "الكل" }}
@@ -43,7 +45,7 @@ const Filter = ({ defultValue, onSelect }: FilterProps) => {
       {/*-------------------  Mobile Filters  -------------------*/}
       <div className={styles.mobileFilters}>
         <DropdownMenu
-          label="Filter By"
+          label={t("filter_by")}
           options={[
             { id: "0", value: "0", name: { en: "All", ar: "الكل" } },
             ...categories.map((item) => ({

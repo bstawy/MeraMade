@@ -4,6 +4,7 @@ import Button from "@/components/Button/Button";
 import styles from "./CartProducts.module.css";
 import { BUTTON_VARIANTS } from "@/components/Button/buttonTypes";
 import { CartItem } from "@/features/cart/cartTypes";
+import { useLanguage } from "@/features/language/useLanguage";
 
 interface CartProductItemProps {
   item: CartItem;
@@ -16,6 +17,7 @@ const CartProductItem = ({
   removeFromCart,
   updateQuantity,
 }: CartProductItemProps) => {
+  const { t, locale } = useLanguage();
   const handleDecrease = () => {
     if (item.quantity > 1) {
       updateQuantity(item.id, item.quantity - 1);
@@ -30,10 +32,12 @@ const CartProductItem = ({
     <div className={styles.product}>
       <div className={styles.heading}>
         <div className={styles.title}>
-          <h3>{item.name.en}</h3>
-          <p>48-hour fermented, wild yaset</p>
+          <h3>{locale === "en" ? item.name.en : item.name.ar}</h3>
+          <p>{t("product_description")}</p>
         </div>
-        <h3 className={styles.price}>${item.price}</h3>
+        <h3 className={styles.price}>
+          {t("currency")} {item.price}
+        </h3>
       </div>
       <div className={styles.quantity}>
         <div className={styles.counter}>
@@ -46,7 +50,7 @@ const CartProductItem = ({
           </button>
         </div>
         <Button
-          label="REMOVE"
+          label={t("remove")}
           variant={BUTTON_VARIANTS.TEXT}
           size="sm"
           onClick={() => {

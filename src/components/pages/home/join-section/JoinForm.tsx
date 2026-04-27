@@ -8,6 +8,7 @@ import Button from "@/components/Button/Button";
 import type { INPUT_SIZES } from "@/components/Input/inputTypes";
 
 import styles from "./JoinSection.module.css";
+import { useLanguage } from "@/features/language/useLanguage";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -18,6 +19,7 @@ const validateEmail = (value: string) => {
 };
 
 const JoinForm = ({ onSubmit }: { onSubmit?: (email: string) => void }) => {
+  const { t } = useLanguage();
   const [email, setEmail] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [isDirty, setIsDirty] = useState(false);
@@ -53,10 +55,10 @@ const JoinForm = ({ onSubmit }: { onSubmit?: (email: string) => void }) => {
         value={email}
         onChange={handleChange}
         onBlur={() => email && setIsDirty(true)}
-        placeholder="Email Address"
+        placeholder={t("emailAddress")}
         inputSize="md"
       />
-      <Button label="Subscribe" size="md" type="submit" />
+      <Button label={t("submit")} size="md" type="submit" />
     </form>
   );
 };

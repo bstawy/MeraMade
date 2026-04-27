@@ -1,19 +1,19 @@
+import { useLanguage } from "@/features/language/useLanguage";
 import styles from "./MainText.module.css";
 
 const MainText = () => {
+  const { t } = useLanguage();
+
   return (
     <>
       <h1 className={styles.mainText}>
         <span>
-          The Art of
+          {t("theArtOf")}
           <br />
         </span>
-        <span>Slow Baking</span>
+        <span>{t("slowBaking")}</span>
       </h1>
-      <p className={styles.description}>
-        Honoring the patience of heritage. Every loaf tells a story written in
-        flour, water, and time.
-      </p>
+      <p className={styles.description}>{t("heritageDescription")}</p>
     </>
   );
 };

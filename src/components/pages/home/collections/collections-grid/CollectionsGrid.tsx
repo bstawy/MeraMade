@@ -8,7 +8,10 @@ import styles from "../Collections.module.css";
 
 export interface Collection {
   id: number;
-  name: string;
+  name: {
+    en: string;
+    ar: string;
+  };
   description: string;
   icon: React.ReactNode;
   color: string;
@@ -16,7 +19,10 @@ export interface Collection {
 const collectionsData: Collection[] = [
   {
     id: 1,
-    name: "Pastries",
+    name: {
+      en: "Pastries",
+      ar: "حلويات",
+    },
     description:
       "Delicate layers, golden laminations, and the scent of French butter reimagined for the modern palate.",
     icon: <PasteriesIcon />,
@@ -24,7 +30,7 @@ const collectionsData: Collection[] = [
   },
   {
     id: 2,
-    name: "Breads",
+    name: { en: "Breads", ar: "خبز" },
     description:
       "From rustic country loaves to artisanal sourdoughs, each bread is a testament to the timeless craft of baking.",
     icon: <BreadIcon />,
@@ -32,7 +38,10 @@ const collectionsData: Collection[] = [
   },
   {
     id: 3,
-    name: "Specialties",
+    name: {
+      en: "Specialties",
+      ar: "تخصصات",
+    },
     description:
       "Unique creations that blend tradition with innovation, offering a taste of the unexpected in every bite.",
     icon: <StarIcon />,

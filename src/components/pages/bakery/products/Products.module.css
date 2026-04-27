@@ -58,13 +58,12 @@
 }
 
 .footer .cartButton {
-  padding: var(--space-16);
-  background-color: transparent;
+  height: 48px;
+  width: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 48px;
-  width: 48px;
+  background-color: transparent;
   color: var(--color-text-primary);
   font-size: var(--fs-48);
   font-weight: var(--fw-light);
@@ -81,7 +80,7 @@
 .footer .index {
   position: absolute;
   bottom: -32px;
-  right: -6px;
+  inset-inline-end: -6px;
   color: var(--color-text-primary);
   font-size: var(--fs-96);
   font-weight: var(--fw-bold);

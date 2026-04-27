@@ -6,8 +6,10 @@ import { BUTTON_VARIANTS } from "@/components/Button/buttonTypes";
 import OrderSummaryItem from "./OrderSummaryItem";
 import { useCart } from "@/features/cart";
 import Link from "next/link";
+import { useLanguage } from "@/features/language/useLanguage";
 
 const OrderSummary = () => {
+  const { t } = useLanguage();
   const { items } = useCart();
 
   const subtotal = items.reduce(
@@ -20,21 +22,26 @@ const OrderSummary = () => {
 
   return (
     <div className={styles.orderSummary}>
-      <h2>Order Summary</h2>
+      <h2>{t("order_summary")}</h2>
       <div className={styles.items}>
-        <OrderSummaryItem label="Subtotal" amount={subtotal.toFixed(2)} />
-        <OrderSummaryItem label="Shipping" amount={shipping.toFixed(2)} />
-        <OrderSummaryItem label="Tax" amount={tax.toFixed(2)} />
+        <OrderSummaryItem label={t("subtotal")} amount={subtotal.toFixed(2)} />
+        <OrderSummaryItem label={t("shipping")} amount={shipping.toFixed(2)} />
+        <OrderSummaryItem label={t("tax")} amount={tax.toFixed(2)} />
       </div>
       <span className={styles.break}></span>
       <div className={styles.total}>
-        <h4>Total</h4>
-        <h2>${total.toFixed(2)}</h2>
+        <h4>{t("total")}</h4>
+        <h2>
+          {t("currency")} {total.toFixed(2)}
+        </h2>
       </div>
       <div className={styles.actions}>
-        <Button label="PROCEED TO CHECKOUT" />
-        <Link href="/bakery">
-          <Button label="CONTINUE SHOPPING" variant={BUTTON_VARIANTS.GHOST} />
+        <Button label={t("checkout_btn")} />
+        <Link href="/bakery" style={{ width: "100%" }}>
+          <Button
+            label={t("continue_shopping")}
+            variant={BUTTON_VARIANTS.GHOST}
+          />
         </Link>
       </div>
     </div>

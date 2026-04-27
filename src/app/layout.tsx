@@ -10,6 +10,7 @@ import { SnackProvider } from "@/snackbar/SnackBarProvider";
 import { Snackbar } from "@/snackbar/SnackBar";
 
 import "./globals.css";
+import { LanguageProvider } from "@/features/language/LanguageProvider";
 
 /* ------  Fonts  ------ */
 const epilogue = Epilogue({
@@ -78,14 +79,16 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>
-          <CartProvider>
-            <SnackProvider>
-              <Snackbar />
-              <Header />
-              {children}
-              <Footer />
-            </SnackProvider>
-          </CartProvider>
+          <LanguageProvider>
+            <CartProvider>
+              <SnackProvider>
+                <Snackbar />
+                <Header />
+                {children}
+                <Footer />
+              </SnackProvider>
+            </CartProvider>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
