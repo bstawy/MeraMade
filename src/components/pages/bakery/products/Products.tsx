@@ -11,7 +11,7 @@ interface ProductsProps {
   categoryMap: Record<string, Category>;
 }
 
-const Products = ({ products, categoryMap, locale = "en" }: ProductsProps) => {
+const Products = ({ products, categoryMap }: ProductsProps) => {
   return (
     <section>
       <Reveal>
